@@ -4,7 +4,11 @@ package io.github.api.error;
 public class ResponseMessage {
 	
 	private String message;
+	
 	private String type;
+	
+	public ResponseMessage() {
+	}
 	
 	public ResponseMessage(String message, String type) {
 		this.message = message;

@@ -89,7 +89,7 @@ public class ItemDaoImpl implements ItemDao {
 	};
 	
 	public byte[] getImageById(int id){
-		String sql = "SELECT price FROM item WHERE id = ?";
+		String sql = "SELECT image FROM item WHERE id = ?";
 		try {
 			byte[] image = jdbcTemplate.queryForObject(sql, byte[].class, id);
 			return image;
