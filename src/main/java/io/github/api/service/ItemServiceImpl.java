@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import io.github.api.dao.ItemDao;
 import io.github.api.entity.Item;
@@ -11,6 +12,7 @@ import io.github.api.entity.Item;
 @Service
 public class ItemServiceImpl implements ItemService {
 	
+	private static final String rollbackFor  = null;
 	@Autowired
 	private ItemDao itemDao;
 	
@@ -48,11 +50,13 @@ public class ItemServiceImpl implements ItemService {
 	};
 	
 //	----------------------------------------POST----------------------------------------
+	@Transactional(rollbackFor = {Exception.class})
 	public void createItem(Item item){
 		itemDao.createItem(item);
 	};
 	
 //	----------------------------------------PUT----------------------------------------
+	@Transactional(rollbackFor = {Exception.class})
 	public Item updateItem(Item item){
 		itemDao.updateItem(item);
 		Item currentItem = itemDao.getItemById(item.getId());
@@ -60,10 +64,12 @@ public class ItemServiceImpl implements ItemService {
 	};
 	
 //	----------------------------------------DELETE----------------------------------------
+	@Transactional
 	public void deleteAllItem(){
 		itemDao.deleteAllItem();
 	};
-
+	
+	@Transactional
 	public void deleteItem(int id){
 		itemDao.deleteItem(id);
 	};
