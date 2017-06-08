@@ -1,5 +1,7 @@
 package io.github.api.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,7 +48,7 @@ public class SingleItemController {
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT)
-	public ResponseEntity<Item> updateItem(@PathVariable("id") int id, @RequestBody Item item) {
+	public ResponseEntity<Item> updateItem(@PathVariable("id") int id, @Valid @RequestBody Item item) {
 		item.setId(id);
 		Item currentItem = itemService.updateItem(item);
 		return new ResponseEntity<>(currentItem, HttpStatus.OK);
