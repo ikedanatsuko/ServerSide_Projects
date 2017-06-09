@@ -21,7 +21,7 @@
 1. このリポジトリをダウンロードかCloneする
 2. データベースのセットアップ
     - PostgreSQLをインストール
-    - データベースを作成し、下記のテーブルを作成  
+    - データベースを作成し、下記のテーブルを作成  
     `CREATE TABLE item (id serial PRIMARY KEY, title varchar(100), note varchar(500), image bytea);`
     - リポジトリの中の /src/main/resources/ にある application.properties の、データベースの名前、ユーザーネーム、パスワードを書き換える
 3. ターミナルでルートディレクトリから次のコマンドを実行：`mvn install`
