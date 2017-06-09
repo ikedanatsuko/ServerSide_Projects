@@ -8,7 +8,7 @@
 - 説明文(最大500文字)
 - 価格
 
-[設計資料](https://github.com/utgwn/Springboot_RESTful_API.wiki.git)
+[設計資料](https://github.com/utgwn/Springboot_RESTful_API/wiki "")
 
 ## 使用技術
 - Java
