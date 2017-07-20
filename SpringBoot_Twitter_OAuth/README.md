@@ -32,5 +32,5 @@ OAuthを利用したTwitterのログイン・ログアウトシステム
         - Spring Starter Projectを作成
         - 依存関係で「web」だけチェック入れる
 - ライブラリの追加
-  - spring-social-twitter
-  - spring-boot-starter-thymeleaf
+    - spring-social-twitter
+    - spring-boot-starter-thymeleaf
