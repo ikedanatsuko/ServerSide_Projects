@@ -25,11 +25,11 @@
 <img src="https://github.com/utgwn/TodoListApp/blob/master/screenshot/screenshot7.png" width="400">
 
 ## 使っているもの
-- Java
-- Spring Framework
-- Spring JDBC
-- PostgreSQL
-- Maven
+- Java（1.6）
+- Spring Framework（3.2.3）
+- Spring JDBC（4.3.6）
+- PostgreSQL（9.6.2）
+- Maven（3.3.9）
 
 ## 設計
 MVCモデルのつもりです  
