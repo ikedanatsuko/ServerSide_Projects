@@ -11,11 +11,11 @@
 [設計資料](https://github.com/utgwn/ServerSide_Projects/wiki "")
 
 ## 使用技術
-- Java
-- Spring Boot
-- Spring JDBC
-- PostgreSQL
-- Maven
+- Java（1.8）
+- Spring Boot（1.5.3）
+- Spring JDBC（4.3.6）
+- PostgreSQL（9.6.2）
+- Maven（3.3.9）
 
 ## 起動方法
 1. このリポジトリをダウンロードかCloneする
