@@ -7,11 +7,11 @@ OAuthを利用したTwitterのログイン・ログアウトシステム
 - 認証せずに画面にアクセスされた場合は、専用のエラー画面（missingAuthorizationException.html）を表示
 
 ## 使用技術
-- Java
-- Spring Boot
-- Spring social twitter
-- Maven
-- Thymeleaf
+- Java（1.8）
+- Spring Boot（1.5.3）
+- Spring social twitter（1.1.2）
+- Maven（3.3.9）
+- Thymeleaf（spring-boot-starter-thymeleaf 1.5.4）
 
 ## 起動方法
 1. このリポジトリをダウンロードかCloneする
@@ -32,5 +32,5 @@ OAuthを利用したTwitterのログイン・ログアウトシステム
         - Spring Starter Projectを作成
         - 依存関係で「web」だけチェック入れる
 - ライブラリの追加
-  - spring-social-twitter
-  - spring-boot-starter-thymeleaf
+  - spring-social-twitter
+  - spring-boot-starter-thymeleaf
