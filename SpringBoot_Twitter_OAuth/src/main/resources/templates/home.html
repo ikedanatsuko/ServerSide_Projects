@@ -6,6 +6,7 @@
 </head>
 <body>
 	<h3>Hello, <span th:text="${twitterProfile.name}">Some User</span>!!!!</h3>
+	<h3>Token: <span th:text="${token}">Tokenr</span></h3>
 	<h4 th:text="#{favorites.info}+':'">These are your favorites:</h4>
 	<table>
 		<tr th:each="favorite:${favorites}">
