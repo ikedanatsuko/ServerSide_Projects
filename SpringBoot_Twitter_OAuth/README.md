@@ -7,10 +7,11 @@ OAuthを利用したTwitterのログイン・ログアウトシステム
 の認証に必要なトークン
     - [SpringBoot_Totalization_Batch](https://github.com/utgwn/ServerSide_Projects/tree/master/SpringBoot_Totalization_Batch "")
 で集計した商品情報
-- ログアウト後はログイン画面に遷移
-- 認証せずに画面にアクセスされた場合は、専用のエラー画面（missingAuthorizationException.html）を表示  
 
 <img src="https://github.com/utgwn/ServerSide_Projects/blob/master/SpringBoot_Twitter_OAuth/screenshot/screenshot1.png" width="500">
+
+- ログアウト後はログイン画面に遷移
+- 認証せずに画面にアクセスされた場合は、専用のエラー画面（missingAuthorizationException.html）を表示  
 
 ## 使用技術
 - Java（1.8）
