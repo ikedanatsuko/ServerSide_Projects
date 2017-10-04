@@ -7,6 +7,10 @@
 - 作成された商品数と商品情報
 - 削除された商品数と商品情報
 
+集計結果は
+[SpringBoot_Twitter_OAuth](https://github.com/utgwn/ServerSide_Projects/tree/master/SpringBoot_Twitter_OAuth "")
+のログイン後の画面に表示
+
 ## 使用技術
 - Java（1.8）
 - Spring Boot（1.5.3)
