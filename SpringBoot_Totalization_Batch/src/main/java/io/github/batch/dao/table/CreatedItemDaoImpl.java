@@ -88,7 +88,7 @@ public class CreatedItemDaoImpl implements ItemOutputDao {
 		}
 	};
 
-//	----------------------------------------POST----------------------------------------
+//	----------------------------------------CREATE----------------------------------------
 	public void createItem(ItemOutput item) {
 		String sql = "INSERT INTO created_item (id, date_id, title, note, price, image) VALUES (?, ?, ?, ?, ?, ?)";
 		jdbcTemplate.update(sql, item.getId(), item.getDateId(), item.getTitle(), item.getNote(), item.getPrice(), item.getImage());

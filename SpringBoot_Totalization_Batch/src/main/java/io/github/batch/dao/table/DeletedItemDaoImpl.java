@@ -88,7 +88,7 @@ public class DeletedItemDaoImpl implements ItemOutputDao {
 		}
 	};
 
-//	----------------------------------------POST----------------------------------------
+//	----------------------------------------CREATE----------------------------------------
 	public void createItem(ItemOutput item) {
 		String sql = "INSERT INTO deleted_item (id, date_id, title, note, price, image) VALUES (?, ?, ?, ?, ?, ?)";
 		jdbcTemplate.update(sql, item.getTitle(), item.getNote(), item.getPrice(), item.getImage());

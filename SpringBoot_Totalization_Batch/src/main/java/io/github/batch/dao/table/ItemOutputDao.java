@@ -6,7 +6,7 @@ import io.github.batch.entity.ItemOutput;
 
 public interface ItemOutputDao {
 	
-	// GET
+	// Get
 	public List<ItemOutput> getAllItem();
 	
 	public List<ItemOutput> getItemsByDateId(int dateId);
@@ -21,10 +21,10 @@ public interface ItemOutputDao {
 	
 	public byte[] getImageById(int id);
 	
-	// POST
+	// Create
 	public void createItem(ItemOutput item);
 	
-	// DELETE
+	// Delete
 	public void deleteAllItem();
 	
 	public void deleteItem(int id);

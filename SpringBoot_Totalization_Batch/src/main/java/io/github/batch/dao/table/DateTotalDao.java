@@ -25,7 +25,7 @@ public interface DateTotalDao {
 	// Create
 	public int createDateTotal(Date date);
 	
-	// Set total
+	// Update
 	public void setCreatedTotal(int id, int total);
 	
 	public void setDeletedTotal(int id, int total);

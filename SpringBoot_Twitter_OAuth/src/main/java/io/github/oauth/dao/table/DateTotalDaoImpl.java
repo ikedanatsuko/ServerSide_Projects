@@ -36,7 +36,7 @@ public class DateTotalDaoImpl implements DateTotalDao {
 		}
 	}
 	
-//	----------------------------------------Get----------------------------------------
+//	----------------------------------------GET----------------------------------------
 	public List<DateTotal> getAllDateTotal(){
 		String sql = "SELECT * FROM date_total";
 		List<DateTotal> allDateTotal = jdbcTemplate.query(sql, new dateTotalRowmapper());
@@ -105,7 +105,7 @@ public class DateTotalDaoImpl implements DateTotalDao {
 		}
 	};
 	
-//	----------------------------------------Add----------------------------------------
+//	----------------------------------------CREATE----------------------------------------
 	public int createDateTotal(Date date){
 		String sql = "INSERT INTO date_total (date) VALUES (?)";
 		jdbcTemplate.update(sql, date);
@@ -115,7 +115,7 @@ public class DateTotalDaoImpl implements DateTotalDao {
 		return id;
 	};
 	
-//	----------------------------------------Set total----------------------------------------
+//	----------------------------------------UPDATE----------------------------------------
 	public void setCreatedTotal(int id, int total){
 		String sql = "UPDATE date_total SET created_total = ? WHERE id = ?";
 		jdbcTemplate.update(sql, total, id);
