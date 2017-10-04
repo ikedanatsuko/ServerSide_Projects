@@ -18,10 +18,10 @@
 	
 	<form action="/search" method="post" th:object="${termForm}" style="margin-bottom:20px;" >
 		<label th:text="#{begin}">Begin</label>
-        <input type="text" id="begin" name="begin" th:field="*{begin}" placeholder="yyyy-MM-dd" />
-        <label th:text="#{end}">End</label>
-        <input type="text" id="end" name="end" th:field="*{end}" placeholder="yyyy-MM-dd" />
-        <button type="submit" th:text="#{search}">search</button>
+		<input type="text" id="begin" name="begin" th:field="*{begin}" placeholder="yyyy-MM-dd" />
+		<label th:text="#{end}">End</label>
+		<input type="text" id="end" name="end" th:field="*{end}" placeholder="yyyy-MM-dd" />
+		<button type="submit" th:text="#{search}">search</button>
 	</form>
 	
 	<table th:each="dateTotal,i:${dateTotals}" >
