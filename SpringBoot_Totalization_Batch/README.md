@@ -2,7 +2,8 @@
 
 ## 概要
 [Springboot_RESTful_API](https://github.com/utgwn/ServerSide_Projects/tree/master/Springboot_RESTful_API "")
-の商品テーブルから次の情報を日毎に集計するバッチ処理
+の商品テーブルから次の情報を日毎に集計するバッチ処理  
+起動時間 00:00
 - 作成された商品数と商品情報
 - 削除された商品数と商品情報
 
