@@ -17,6 +17,7 @@ OAuthを利用したTwitterのログイン・ログアウトシステム
 - Java（1.8）
 - Spring Boot（1.5.3）
 - Spring social twitter（1.1.2）
+- Redis (4.0.1)
 - Maven（3.3.9）
 - Thymeleaf（spring-boot-starter-thymeleaf 1.5.4）
 
@@ -28,7 +29,7 @@ OAuthを利用したTwitterのログイン・ログアウトシステム
 5. 起動
     - カレントディレクトリに移動　例：`cd SpringBoot_Twitter_OAuth-master`
     - カレントディレクトリで次のコマンドを実行：`mvn spring-boot:run`
-6. 次のURLにアクセス：`localhost:8080/`
+6. 次のURLにアクセス：`localhost:1111/`
 
 ## 開発環境のセットアップ手順
 - Java
@@ -38,6 +39,3 @@ OAuthを利用したTwitterのログイン・ログアウトシステム
     - プロジェクト作成
         - Spring Starter Projectを作成
         - 依存関係で「web」だけチェック入れる
-- ライブラリの追加
-    - spring-social-twitter
-    - spring-boot-starter-thymeleaf
