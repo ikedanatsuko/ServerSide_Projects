@@ -1,15 +1,13 @@
 package io.github.api.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import io.github.api.entity.Item;
@@ -23,25 +21,10 @@ public class ItemDaoImpl implements ItemDao {
 	@Autowired
 	private MessageSource messageSource;
 
-	// Item mapping
-	private class itemRowmapper implements RowMapper<Item> {
-		@Override
-		public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
-			Item item = new Item();
-			item.setId(rs.getInt("id"));
-			item.setTitle(rs.getString("title"));
-			item.setNote(rs.getString("note"));
-			item.setPrice(rs.getInt("price"));
-			item.setImage(rs.getBytes("image"));
-
-			return item;
-		}
-	}
-
 //	----------------------------------------GET----------------------------------------
 	public List<Item> getAllItem() {
 		String sql = "SELECT * FROM item";
-		List<Item> allItem = jdbcTemplate.query(sql, new itemRowmapper());
+		List<Item> allItem = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Item.class));
 		if (allItem.isEmpty()) {
 			throw new EmptyResultDataAccessException(messageSource.getMessage("item.noResult", null, null), 0);
 		}
@@ -51,7 +34,7 @@ public class ItemDaoImpl implements ItemDao {
 	public Item getItemById(int id) {
 		String sql = "SELECT * FROM item WHERE id = ?";
 		try {
-			Item item = jdbcTemplate.queryForObject(sql, new Object[] { id }, new itemRowmapper());
+			Item item = jdbcTemplate.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper<>(Item.class));
 			return item;
 		} catch (EmptyResultDataAccessException e) {
 			throw new EmptyResultDataAccessException(messageSource.getMessage("item.notFound", null, null), 0);
@@ -100,7 +83,7 @@ public class ItemDaoImpl implements ItemDao {
 
 	public List<Item> getItemsByTitle(String title) {
 		String sql = "SELECT * FROM item WHERE title LIKE ?";
-		List<Item> result = jdbcTemplate.query(sql, new Object[] { title }, new itemRowmapper());
+		List<Item> result = jdbcTemplate.query(sql, new Object[] { title }, new BeanPropertyRowMapper<>(Item.class));
 		if (result.isEmpty()) {
 			throw new EmptyResultDataAccessException(messageSource.getMessage("item.noResult", null, null), 0);
 		}
@@ -109,7 +92,7 @@ public class ItemDaoImpl implements ItemDao {
 
 	public List<Item> getItemsByNote(String note) {
 		String sql = "SELECT * FROM item WHERE note LIKE ?";
-		List<Item> result = jdbcTemplate.query(sql, new Object[] { note }, new itemRowmapper());
+		List<Item> result = jdbcTemplate.query(sql, new Object[] { note }, new BeanPropertyRowMapper<>(Item.class));
 		if (result.isEmpty()) {
 			throw new EmptyResultDataAccessException(messageSource.getMessage("item.noResult", null, null), 0);
 		}
@@ -118,7 +101,7 @@ public class ItemDaoImpl implements ItemDao {
 
 	public List<Item> getItemsByPrice(int price) {
 		String sql = "SELECT * FROM item WHERE price = ?";
-		List<Item> result = jdbcTemplate.query(sql, new Object[] { price }, new itemRowmapper());
+		List<Item> result = jdbcTemplate.query(sql, new Object[] { price }, new BeanPropertyRowMapper<>(Item.class));
 		if (result.isEmpty()) {
 			throw new EmptyResultDataAccessException(messageSource.getMessage("item.noResult", null, null), 0);
 		}

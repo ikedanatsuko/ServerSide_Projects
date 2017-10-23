@@ -4,10 +4,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import io.github.oauth.dao.ItemOutputRowmapper;
 import io.github.oauth.entity.ItemOutput;
 
 @Repository
@@ -18,14 +18,11 @@ public class DeletedItemDaoImpl implements ItemOutputDao {
 
 	@Autowired
 	private MessageSource messageSource;
-	
-	@Autowired
-	private ItemOutputRowmapper itemOutputRowmapper;
 
 //	----------------------------------------GET----------------------------------------
 	public List<ItemOutput> getAllItem() {
 		String sql = "SELECT * FROM item";
-		List<ItemOutput> allItem = jdbcTemplate.query(sql, itemOutputRowmapper);
+		List<ItemOutput> allItem = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ItemOutput.class));
 		if (allItem.isEmpty()) {
 			throw new EmptyResultDataAccessException(messageSource.getMessage("deletedItem.noResult", null, null), 0);
 		}
@@ -34,14 +31,14 @@ public class DeletedItemDaoImpl implements ItemOutputDao {
 	
 	public List<ItemOutput> getItemsByDateId(int dateId){
 		String sql = "SELECT * FROM deleted_item WHERE date_id = ?";
-		List<ItemOutput> items = jdbcTemplate.query(sql, new Object[]{dateId}, itemOutputRowmapper);
+		List<ItemOutput> items = jdbcTemplate.query(sql, new Object[]{dateId}, new BeanPropertyRowMapper<>(ItemOutput.class));
 		return items;
 	};
 	
 	public ItemOutput getItemById(int id) {
 		String sql = "SELECT * FROM deleted_item WHERE id = ?";
 		try {
-			ItemOutput item = jdbcTemplate.queryForObject(sql, new Object[] { id }, itemOutputRowmapper);
+			ItemOutput item = jdbcTemplate.queryForObject(sql, new Object[] { id }, new BeanPropertyRowMapper<>(ItemOutput.class));
 			return item;
 		} catch (EmptyResultDataAccessException e) {
 			throw new EmptyResultDataAccessException(messageSource.getMessage("deletedItem.notFound", null, null), 0);
