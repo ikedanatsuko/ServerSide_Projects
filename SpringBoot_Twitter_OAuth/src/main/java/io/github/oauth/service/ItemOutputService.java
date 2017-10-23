@@ -43,22 +43,24 @@ public class ItemOutputService {
 	public List<List<ItemOutput>> getCreatedItems(List<DateTotal> dateTotals) {
 		List<List<ItemOutput>> createdItems = new ArrayList<>();
 		
-		for (int i = 0; i < dateTotals.size(); i++) {
-			int dateId = dateTotals.get(i).getId();		
+		for (DateTotal dateTotal : dateTotals) {
+			int dateId = dateTotal.getId();
 			List<ItemOutput> tmpCreatedItems = createdItemDao.getItemsByDateId(dateId);
 			createdItems.add(tmpCreatedItems);
-		}		
+		}
+		
 		return createdItems;
 	}
 	
 	public List<List<ItemOutput>> getDeletedItems(List<DateTotal> dateTotals) {
 		List<List<ItemOutput>> deletedItems = new ArrayList<>();
 		
-		for (int i = 0; i < dateTotals.size(); i++) {
-			int dateId = dateTotals.get(i).getId();
+		for (DateTotal dateTotal : dateTotals) {
+			int dateId = dateTotal.getId();
 			List<ItemOutput> tmpDeletedItems = deletedItemDao.getItemsByDateId(dateId);
 			deletedItems.add(tmpDeletedItems);
 		}
+		
 		return deletedItems;
 	}
 }
