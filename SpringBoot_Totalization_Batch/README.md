@@ -1,15 +1,17 @@
 # SpringBoot_Totalization_Batch
 
 ## 概要
-[Springboot_RESTful_API](https://github.com/utgwn/ServerSide_Projects/tree/master/Springboot_RESTful_API "")
+[Springboot_RESTful_API](https://github.com/utgwn/ServerSide_Projects/tree/master/Springboot_RESTful_API)
 の商品テーブルから次の情報を日毎に集計するバッチ処理  
-起動時間 00:00
 - 作成された商品数と商品情報
 - 削除された商品数と商品情報
 
+1日1度だけ、00:00 に起動  
 集計結果は
-[SpringBoot_Twitter_OAuth](https://github.com/utgwn/ServerSide_Projects/tree/master/SpringBoot_Twitter_OAuth "")
+[SpringBoot_Twitter_OAuth](https://github.com/utgwn/ServerSide_Projects/tree/master/SpringBoot_Twitter_OAuth)
 のログイン後の画面に表示
+
+[設計資料](https://github.com/utgwn/ServerSide_Projects/wiki/SpringBoot_Totalization_Batch)
 
 ## 使用技術
 - Java（1.8）
@@ -23,11 +25,8 @@
 1. このリポジトリをダウンロードかCloneする
 2. データベースのセットアップ
     - PostgreSQLをインストール
-    - データベースを作成し、下記のテーブルを作成  
-      - `CREATE TABLE created_item (id serial PRIMARY KEY, date_id integer, title varchar(100), note varchar(500), price integer, image bytea);`
-      - `CREATE TABLE deleted_item (id serial PRIMARY KEY, date_id integer, title varchar(100), note varchar(500), price integer, image bytea);`
-      - `CREATE TABLE date_total (id integer, date date, created_total integer, deleted_total integer);`
-      - `CREATE TABLE pre_item (id serial PRIMARY KEY, title varchar(100), note varchar(500), price integer, image bytea);`
+    - データベースを作成し、テーブルを作成  
+        - [テーブルの構成](https://github.com/utgwn/ServerSide_Projects/wiki/SpringBoot_Totalization_Batch#database)
     - リポジトリの中の /src/main/resources/ にある application.properties の、データベースの名前、ユーザーネーム、パスワードを書き換える
 3. ターミナルでルートディレクトリから次のコマンドを実行：`mvn install`
 4. 起動
