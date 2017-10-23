@@ -1,16 +1,11 @@
 package io.github.oauth.entity;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 // Item entity + dateId
-
-@Entity
 public class ItemOutput {
 	
-	@Id
 	private int id;
 	
 	private int dateId;

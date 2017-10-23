@@ -2,14 +2,10 @@ package io.github.oauth.entity;
 
 import java.sql.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-@Entity
 public class DateTotal {
 	
-	@Id
 	private int id;
 	
 	@NotNull

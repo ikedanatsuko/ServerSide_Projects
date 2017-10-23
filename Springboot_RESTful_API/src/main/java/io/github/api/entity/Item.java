@@ -1,14 +1,11 @@
 package io.github.api.entity;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
 public class Item {
 	
-	@Id
 	private int id;
 	
 	@NotBlank
