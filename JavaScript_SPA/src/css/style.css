@@ -1,0 +1,24 @@
+label {
+  margin-right: 10px;
+  width:60px;
+  float: left;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul {
+    width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.send {
+  margin-top: 10px;
+  text-align: center;
+}
