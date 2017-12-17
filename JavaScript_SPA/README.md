@@ -1,7 +1,8 @@
 # JavaScript_SPA
 
 ## 概要
-[Springboot_RESTful_API](https://github.com/utgwn/ServerSide_Projects/tree/master/Springboot_RESTful_API) を叩いて結果を表示する Single Page Application  
+[Springboot_RESTful_API](https://github.com/utgwn/ServerSide_Projects/tree/master/Springboot_RESTful_API) を叩いて結果を表示する Single Page Application  
+<img src="https://github.com/utgwn/ServerSide_Projects/blob/master/JavaScript_SPA/doc/screenshot.png" width="500">
 [画面仕様書](https://github.com/utgwn/ServerSide_Projects/blob/master/JavaScript_SPA/doc/画面仕様書.xlsx)
 
 ## 使用技術
