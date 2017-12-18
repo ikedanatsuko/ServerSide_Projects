@@ -15,10 +15,10 @@ export default class HttpMethodForm extends React.Component {
       'DELETE'
     ];
 
-    const methodOptions = [];
+    const method_options = [];
     for (const i in methods) {
       const method = methods[i];
-      methodOptions.push(
+      method_options.push(
         <option value={method}>{method}</option>
       );
     }
@@ -28,7 +28,7 @@ export default class HttpMethodForm extends React.Component {
         <li>
           <label>Method</label>
           <select onChange={this.handleChange.bind(this)}>
-            {methodOptions}
+            {method_options}
           </select>
         </li>
       </ul>

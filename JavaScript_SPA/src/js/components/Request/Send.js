@@ -7,8 +7,8 @@ import config from "../../../../config/config";
 export default class Send extends React.Component {
 
   handleClick(e) {
-    const tokenHeaderName = config.tokenHeaderName;
-    const defaultURL = config.defaultURL;
+    const token_header = config.tokenHeaderName;
+    const default_url = config.defaultURL;
     const url = this.props.url;
 
     const title = this.props.title;
@@ -28,15 +28,15 @@ export default class Send extends React.Component {
     switch (this.props.method) {
       case "GET":
         request
-          .get(defaultURL + url)
-          .set(tokenHeaderName, this.props.token)
+          .get(default_url + url)
+          .set(token_header, this.props.token)
           .end(function(err, res) {
             end(res);
           }.bind(this));
         break;
       case "POST":
         request
-          .post(defaultURL + url)
+          .post(default_url + url)
           .set("token", this.props.token)
           .send({title: title, note: note, price: price, image: image})
           .end(function(err, res) {
@@ -45,7 +45,7 @@ export default class Send extends React.Component {
         break;
         case "PUT":
           request
-            .put(defaultURL + url)
+            .put(default_url + url)
             .set("token", this.props.token)
             .send({title: title, note: note, price: price, image: image})
             .end(function(err, res) {
@@ -54,7 +54,7 @@ export default class Send extends React.Component {
           break;
           case "DELETE":
             request
-              .del(defaultURL + url)
+              .del(default_url + url)
               .set("token", this.props.token)
               .end(function(err, res) {
                 end(res);
