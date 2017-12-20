@@ -12,7 +12,7 @@ export default class Layout extends React.Component {
       req_token: "",
       req_url: "",
       in_title: "",
-      in_note: "",
+      in_note: null,
       in_price: null,
       in_image: null,
       res_status: "",
@@ -51,7 +51,7 @@ export default class Layout extends React.Component {
         <h1>Request</h1>
         <Request
           method={this.state.req_method} token={this.state.req_token} url={this.state.req_url}
-          title={this.state.in_title} note={this.state.note} price={this.state.price} image={this.state.image}
+          title={this.state.in_title} note={this.state.in_note} price={this.state.in_price} image={this.state.in_image}
           setMethod={this.setMethod.bind(this)}
           setToken={this.setToken.bind(this)}
           setURL={this.setURL.bind(this)}
