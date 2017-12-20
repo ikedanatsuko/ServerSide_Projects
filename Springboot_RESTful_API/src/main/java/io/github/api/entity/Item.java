@@ -12,7 +12,7 @@ public class Item {
 	@Size(min = 1, max = 100)
 	private String title;
 	
-	@Size(min = 1, max = 500)
+	@Size(max = 500)
 	private String note;
 	
 	private int price;
