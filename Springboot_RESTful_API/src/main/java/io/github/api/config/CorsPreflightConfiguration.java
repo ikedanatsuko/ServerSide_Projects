@@ -17,6 +17,7 @@ public class CorsPreflightConfiguration {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.addAllowedOrigin("http://localhost:4444");
+        config.addAllowedOrigin("http://34.215.126.118:4444");
         config.addAllowedHeader(CorsConfiguration.ALL);
         config.addAllowedMethod(CorsConfiguration.ALL);
         // api end point
