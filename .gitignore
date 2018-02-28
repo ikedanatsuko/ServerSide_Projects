@@ -4,3 +4,4 @@ target/
 .recommenders/*
 Servers/*
 RemoteSystemsTempFiles/*
+application-dev1.properties
