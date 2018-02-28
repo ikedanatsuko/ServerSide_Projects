@@ -38,6 +38,7 @@ public class AuthorizationFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
 		HttpServletResponse httpResponse = (HttpServletResponse)response;
 		String token = httpRequest.getHeader("token");
+		
 		if (token == null) {
 			errorResponse(httpResponse, messageSource.getMessage("token.notFound", null, null));
 			return;
@@ -47,6 +48,7 @@ public class AuthorizationFilter implements Filter {
 			errorResponse(httpResponse, messageSource.getMessage("token.unauthorized", null, null));
 			return;
 		}
+		
 		chain.doFilter(httpRequest, httpResponse);
 	}
 	
