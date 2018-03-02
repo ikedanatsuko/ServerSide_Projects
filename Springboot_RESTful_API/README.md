@@ -31,7 +31,7 @@
 4. 起動
     - カレントディレクトリに移動　例：`cd Springboot_RESTful_API-master`
     - カレントディレクトリで次のコマンドを実行：`mvn spring-boot:run`
-8. 次のURLからAPIを使用できます：`localhost:2222/api/`
+8. 次のURLからAPIを使用できます：`localhost:2222/`
 
 ## 認証手順
 1. ターミナルからRedisを起動：`redis-server`
@@ -40,7 +40,7 @@
 4. ログイン後の画面に表示されるトークンを確認
     - 例：8eb23b4aa55a605e272bd704d4df404f
 5. ヘッダーにトークンをセットすることでリクエストできます
-    - 例：`curl -H 'token:8eb23b4aa55a605e272bd704d4df404f' http://localhost:2222/api/items`
+    - 例：`curl -H 'token:8eb23b4aa55a605e272bd704d4df404f' http://localhost:2222/items`
 
 ## 開発環境のセットアップ手順
 - Java
