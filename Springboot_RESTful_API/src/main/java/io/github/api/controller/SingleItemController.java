@@ -16,7 +16,7 @@ import io.github.api.entity.Item;
 import io.github.api.service.ItemService;
 
 @RestController
-@RequestMapping("/api/items/{id}")
+@RequestMapping("/items/{id}")
 public class SingleItemController {
 	
 	@Autowired
