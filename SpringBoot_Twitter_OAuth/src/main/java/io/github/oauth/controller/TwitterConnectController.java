@@ -1,5 +1,6 @@
 package io.github.oauth.controller;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.servlet.view.RedirectView;
 
+import io.github.oauth.config.PropsConfig;
 import io.github.oauth.token.TokenManager;
 
 @Controller
@@ -21,9 +23,17 @@ import io.github.oauth.token.TokenManager;
 public class TwitterConnectController extends ConnectController {
 	
 	@Autowired
+	private PropsConfig propsConfig;
+	
+	@Autowired
 	private TokenManager tokenManager;
 	
 	private Twitter twitter;
+	
+	@PostConstruct
+	public void Init() {
+		setApplicationUrl(propsConfig.getUrl());
+	}
 	
 	@Inject
 	public TwitterConnectController(Twitter twitter, ConnectionFactoryLocator connectionFactoryLocator, ConnectionRepository connectionRepository) {
