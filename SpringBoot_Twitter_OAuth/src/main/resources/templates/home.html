@@ -8,7 +8,7 @@
 	<h3>Hello, <span th:text="${twitterProfile.name}">Some User</span>!!!!</h3>
 	<h3>Token: <span th:text="${token}">Token</span></h3>
 	
-	<form action="/connect/twitter"  method="post">
+	<form action="connect/twitter"  method="post">
 		<input type="hidden" name="_method" value="DELETE"></input>
 		<button type="submit" th:text="#{logout}">Logout</button>
 	</form>
@@ -16,7 +16,7 @@
 	<h3>API Record</h3>
 	<h4 th:text="#{search.term}">Search by term</h4>
 	
-	<form action="/search" method="post" th:object="${termForm}" style="margin-bottom:20px;" >
+	<form action="search" method="post" th:object="${termForm}" style="margin-bottom:20px;" >
 		<label th:text="#{begin}">Begin</label>
 		<input type="text" id="begin" name="begin" th:field="*{begin}" placeholder="yyyy-MM-dd" />
 		<label th:text="#{end}">End</label>
