@@ -1,4 +1,5 @@
 import React from "react";
+import config from "../../../../config/config";
 
 export default class URLForm extends React.Component {
 
@@ -14,7 +15,8 @@ export default class URLForm extends React.Component {
           <p>URL</p>
         </li>
         <li>
-          <p>http://localhost:2222/api/items
+          <p>
+            {config.defaultURL}
             <input type="text" size="60" onChange={this.handleChange.bind(this)} />
           </p>
         </li>
